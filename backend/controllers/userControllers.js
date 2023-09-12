@@ -17,9 +17,9 @@ const allUsers = asyncHandler(async (req, res) => {
 });
 
 const registerUser = asyncHandler(async (req, res) => {
-  const { name, email, password, pic } = req.body;
+  const { name, email, password, organization } = req.body;
 
-  if (!name || !email || !password) {
+  if (!name || !email || !password || !organization) {
     res.status(400);
     throw new Error("Please Enter all the Fields");
   }
@@ -35,7 +35,7 @@ const registerUser = asyncHandler(async (req, res) => {
     name,
     email,
     password,
-    pic,
+    organization,
   });
 
   if (user) {
@@ -45,6 +45,7 @@ const registerUser = asyncHandler(async (req, res) => {
       email: user.email,
       isAdmin: user.isAdmin,
       pic: user.pic,
+      organization: user.organization,
       token: generateToken(user._id),
     });
   } else {
