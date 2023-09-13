@@ -35,7 +35,7 @@ const server = app.listen(PORT, console.log(`Server started on ${PORT}`));
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origins: ["http://localhost:3000", "https://poject-sahyog.netlify.app/"],
     // credentials: true,
   },
 });
@@ -71,5 +71,3 @@ io.on("connection", (socket) => {
     socket.leave(userData._id);
   });
 });
-
-
