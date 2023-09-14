@@ -19,8 +19,7 @@ const app = express();
 // Enable CORS for all routes
 app.use(cors());
 app.use(express.json()); // to accept json data
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.static('uploads'));
 
 app.get("/", (req, res) => {
   res.send("API is running");

@@ -11,6 +11,8 @@ import Aboutpage from "./pages/Aboutpage";
 import ContactUsPage from "./pages/ContactUsPage";
 import ProjectUpload from "./components/ProjectUpload";
 import ProfilePage from "./components/UserProfile/profile-page"
+import Networks from "./components/miscellaneous/NetworkPage"
+
 
 function App() {
   return (
@@ -23,11 +25,11 @@ function App() {
           <Route path="/project-upload" element={<ProjectUpload/>}/>
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<ProfileModal />} />
-          <Route path="/networks" element={<ProfilePage />} />
+          <Route path="/networks" element={<Networks />} />
           <Route path="/about" element={<Aboutpage/>} />
           <Route path="/contact" element={<ContactUsPage/>}/>
           <Route path="/*" element={<PagenotFound />} />
-        </Routes>
+        </Routes> 
       </div>
     </>
   );
