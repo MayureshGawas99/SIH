@@ -5,8 +5,14 @@ const userSchema = mongoose.Schema(
   {
     name: { type: "String", required: true },
     organization: { type: "String", required: true },
+    designation: { type: "String",default:"NA"},
+    qualification: { type: "String",default:"NA"},
+    expertise: { type: [String]},
+    skills: { type: [String]},
     email: { type: "String", unique: true, required: true },
     password: { type: "String", required: true },
+    role:{type:"Number",default: 3,},
+
     pic: {
       type: "String",
       required: true,

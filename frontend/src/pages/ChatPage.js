@@ -63,7 +63,7 @@ const Chatpage = () => {
   return (
     <div
       style={{ width: "100%", height: "100%" }}
-      className="d-flex flex-column"
+      className="d-flex flex-column "
     >
       {user && <SideDrawer />}
       <Tabs index={tabIndex} isFitted variant="enclosed">

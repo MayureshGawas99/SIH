@@ -57,6 +57,7 @@ const accessChat = asyncHandler(async (req, res) => {
 //@access          Protected
 const fetchAcceptedChats = asyncHandler(async (req, res) => {
   try {
+    
     Chat.find({
       $and: [
         { users: { $elemMatch: { $eq: req.user._id } } },

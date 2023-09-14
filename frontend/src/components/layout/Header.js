@@ -7,7 +7,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div className="container-fluid">
         <Link className="navbar-brand text-bold " href="/">
           <span className="text-blue">Pro</span>
@@ -33,7 +33,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link " aria-current="page" to="/profiles">
-                Profiles
+                Networks
               </Link>
             </li>
             <li className="nav-item">

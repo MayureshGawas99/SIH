@@ -38,6 +38,7 @@ const SideDrawer = () => {
   const handleLogout = () => {
     localStorage.removeItem("userInfo");
     setUser(null);
+    navigate("/")
     toast({
       title: "Logout Successfull.",
       status: "success",
@@ -125,11 +126,15 @@ const SideDrawer = () => {
             <MenuItem
               onClick={() => {
                 setShowProfile(user);
-                navigate("/chatprofile");
+                navigate("/Profile");
               }}
             >
               My profile
             </MenuItem>
+            {user?.role === 0 &&(<MenuItem
+              onClick={() => navigate("/project-upload")}>
+              upload Project
+            </MenuItem>)}
             <MenuDivider />
             <MenuItem onClick={handleLogout}>Logout</MenuItem>
           </MenuList>

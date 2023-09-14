@@ -5,20 +5,31 @@ const cors = require("cors");
 const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
+const projectRoutes = require("./routes/projectRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
-
+const Project= require("./models/projectModel"); 
+const bodyParser = require("body-parser");
 dotenv.config();
 connectDB();
+
+
 
 const app = express();
 
 // Enable CORS for all routes
 app.use(cors());
 app.use(express.json()); // to accept json data
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/", (req, res) => {
   res.send("API is running");
 });
+
+
+
+// Define a route to handle PDF file uploads
+app.use('/api/project',projectRoutes );
 // routes
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
